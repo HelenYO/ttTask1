@@ -14,7 +14,9 @@ tokens :-
   \\                         	            { \_ -> Lamb }
   $letter [$letter $digit $apostrophe]*     { \s -> Ident s }
   $white+                    	            ;
-    "#".*                      	            ;
+  "#".*                      	            ;
+  \\n                                       ;
+  \\r                                       ;
 {
 data Token = Lamb
            | DotT
